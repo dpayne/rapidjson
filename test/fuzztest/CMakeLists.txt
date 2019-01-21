@@ -47,5 +47,5 @@ target_link_libraries(fuzztest fuzz_test)
 add_dependencies(tests fuzztest)
 
 add_test(NAME fuzztest
-    COMMAND fuzz_test -o ${CMAKE_SOURCE_DIR}/fuzz_results -i ${CMAKE_SOURCE_DIR}/test/fuzztest -t 300 "${CMAKE_SOURCE_DIR}/bin/fuzztest"
+    COMMAND fuzz_test -o /tmp/fuzz_results -i ${CMAKE_SOURCE_DIR}/test/fuzztest -t 300 "${CMAKE_SOURCE_DIR}/build/bin/fuzztest"
     WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}/bin)
