@@ -16,5 +16,6 @@ IF(GTESTSRC_FOUND)
     add_custom_target(tests ALL)
     add_subdirectory(perftest)
     add_subdirectory(unittest)
+    add_subdirectory(fuzztest)
 
 ENDIF(GTESTSRC_FOUND)
