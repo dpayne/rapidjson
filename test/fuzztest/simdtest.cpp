@@ -41,6 +41,9 @@ using namespace rapidjson_simd;
 FUZZ_TEST(SIMDDocument, Parse, const uint8_t * Data, size_t Size)
 {
     std::string data{(const char *) Data, Size};
+
+    data.append( std::string{ "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"  } ); // pad string to avoid triggering overflow detection when using simd
+
     Document doc;
     doc.Parse(data);
 }
